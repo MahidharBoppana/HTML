@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas and Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        canvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 20px auto;
+        }
+        progress {
+            width: 80%;
+            height: 20px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas and Progress Bar Example</h1>
+
+    <!-- Canvas Element -->
+    <h2>Canvas: Draw a Rectangle</h2>
+    <canvas id="myCanvas" width="400" height="200"></canvas>
+
+    <!-- Progress Bar -->
+    <h2>Task Progress</h2>
+    <progress id="progressBar" value="0" max="100"></progress>
+    <p id="progressText">0% Complete</p>
+    
+    <button onclick="startProgress()">Start Task</button>
+
+    <script>
+        // Drawing a rectangle on the canvas
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set fill color and draw rectangle
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(50, 50, 300, 100); // x, y, width, height
+
+        // Simulating progress for the progress bar
+        let progressValue = 0;
+        function startProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            
+            const interval = setInterval(() => {
+                if (progressValue < 100) {
+                    progressValue += 10;
+                    progressBar.value = progressValue;
+                    progressText.textContent = `${progressValue}% Complete`;
+                } else {
+                    clearInterval(interval);
+                    alert('Task Completed!');
+                }
+            }, 500); // Update every 500ms
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="device=device-width initial-scale=1.0" >
+    <title>title</title>
+  </head>
+  <body>
+
+    <!--Add required attributes to form fields to ensure that users cannot submit empty forms. -->
+    <!--Add a pattern attribute to validate an email address. -->
+
+    <form>
+        <label>Enter UserName:</label>
+        <input type="text" placeholder="Enter UserName" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" 
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+               title="Please enter a valid email address"><br>
+        <input type="radio" name="gender" required><label>Male</label><br><br>
+        <input type="radio" name="gender" required><label>Female</label><br><br>
+        <label>Select your country:</label>
+        <select>
+            <option>INDIA</option>
+            <option>US</option>
+            <option>CANNADA</option>
+            <option>LONDON</option>
+            <option>CHINA</option>
+        </select><br><br>
+        <input type="checkbox" required>By accessing or using [Your Website/Service], you acknowledge that you have read, understood, and agree to be bound by these terms. If you do not agree to these terms, you may not access or use our services. <br>
+        <button>Submit</button>
+    </form>
+
+  </body>
+</html>

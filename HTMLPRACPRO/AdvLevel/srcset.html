@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image</title>
+</head>
+<body>
+
+    <!--Add an image to your page and use the srcset attribute to load different images based on the screen size. -->
+
+    <h1>Responsive Image Example</h1>
+    <picture>
+        <source srcset="images/OIP.jpeg" media="(min-width: 1024px)">
+        <source srcset="images/image2.jpeg" media="(min-width: 768px)">
+        <img src="images/image1.jpeg" alt="A beautiful responsive landscape">
+    </picture>
+</body>
+</html>
